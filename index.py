@@ -4,7 +4,6 @@ import logging
 
 app = Flask(__name__)
 
-# Cấu hình logging
 logging.basicConfig(level=logging.DEBUG)
 
 def get_db_connection():
@@ -34,7 +33,7 @@ def get_user():
         logging.info(f"GET request received for user with name: {name}")
         
         conn = get_db_connection()
-        conn.autocommit = True  # Bật autocommit
+        conn.autocommit = True  # Enable autocommit mode
         cur = conn.cursor()
         
         query = f"SELECT * FROM users WHERE name='{name}'"

